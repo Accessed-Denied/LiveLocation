@@ -13,6 +13,10 @@
 		22CF915624D97DDD00AF7ED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF915424D97DDD00AF7ED5 /* Main.storyboard */; };
 		22CF915824D97DE200AF7ED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CF915724D97DE200AF7ED5 /* Assets.xcassets */; };
 		22CF915B24D97DE200AF7ED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF915924D97DE200AF7ED5 /* LaunchScreen.storyboard */; };
+		22CF916424D97E1C00AF7ED5 /* HttpUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF916324D97E1C00AF7ED5 /* HttpUtility.swift */; };
+		22CF916624D97E6400AF7ED5 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF916524D97E6400AF7ED5 /* GlobalConstant.swift */; };
+		22CF916B24D97FD400AF7ED5 /* MessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF916924D97FD400AF7ED5 /* MessageRequest.swift */; };
+		22CF916C24D97FD400AF7ED5 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF916A24D97FD400AF7ED5 /* MessageResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		22CF915724D97DE200AF7ED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22CF915A24D97DE200AF7ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22CF915C24D97DE200AF7ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22CF916324D97E1C00AF7ED5 /* HttpUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtility.swift; sourceTree = "<group>"; };
+		22CF916524D97E6400AF7ED5 /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
+		22CF916924D97FD400AF7ED5 /* MessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRequest.swift; sourceTree = "<group>"; };
+		22CF916A24D97FD400AF7ED5 /* MessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 		22CF914D24D97DDD00AF7ED5 /* LiveLocation */ = {
 			isa = PBXGroup;
 			children = (
+				22CF916724D97FC000AF7ED5 /* Model */,
+				22CF916224D97E1C00AF7ED5 /* Services */,
 				22CF914E24D97DDD00AF7ED5 /* AppDelegate.swift */,
 				22CF915024D97DDD00AF7ED5 /* SceneDelegate.swift */,
 				22CF915224D97DDD00AF7ED5 /* ViewController.swift */,
@@ -63,8 +73,34 @@
 				22CF915724D97DE200AF7ED5 /* Assets.xcassets */,
 				22CF915924D97DE200AF7ED5 /* LaunchScreen.storyboard */,
 				22CF915C24D97DE200AF7ED5 /* Info.plist */,
+				22CF916524D97E6400AF7ED5 /* GlobalConstant.swift */,
 			);
 			path = LiveLocation;
+			sourceTree = "<group>";
+		};
+		22CF916224D97E1C00AF7ED5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				22CF916324D97E1C00AF7ED5 /* HttpUtility.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		22CF916724D97FC000AF7ED5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22CF916824D97FD400AF7ED5 /* MessageModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22CF916824D97FD400AF7ED5 /* MessageModel */ = {
+			isa = PBXGroup;
+			children = (
+				22CF916924D97FD400AF7ED5 /* MessageRequest.swift */,
+				22CF916A24D97FD400AF7ED5 /* MessageResponse.swift */,
+			);
+			path = MessageModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CF916424D97E1C00AF7ED5 /* HttpUtility.swift in Sources */,
+				22CF916624D97E6400AF7ED5 /* GlobalConstant.swift in Sources */,
 				22CF915324D97DDD00AF7ED5 /* ViewController.swift in Sources */,
+				22CF916B24D97FD400AF7ED5 /* MessageRequest.swift in Sources */,
 				22CF914F24D97DDD00AF7ED5 /* AppDelegate.swift in Sources */,
+				22CF916C24D97FD400AF7ED5 /* MessageResponse.swift in Sources */,
 				22CF915124D97DDD00AF7ED5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +334,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.LiveLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +352,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.LiveLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
