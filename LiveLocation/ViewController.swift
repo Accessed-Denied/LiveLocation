@@ -48,26 +48,25 @@ extension ViewController: CLLocationManagerDelegate{
                 UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isLocationSaved)
                 UserDefaults.standard.set(Date(), forKey: UserDefaultsKeys.locationSavedDate)
             }
-            //if initial location is already saved we not need to save it again
+            //if initial location is already saved we don't need to save it again
             else{
                 if let SavedLocation = UserDefaults.standard.get(Location.self, forKey: UserDefaultsKeys.userLocation){
                     log.success("\(SavedLocation.toJSON())")/
                     print(location)
                     if let savedDate = UserDefaults.standard.value(forKey: UserDefaultsKeys.locationSavedDate) as? Date{
                         let currentDate = Date()
-                        let calendar = Calendar.current
-                        let currentMin = calendar.component(.minute, from: currentDate)
-                        let savedMin = calendar.component(.minute, from: savedDate)
-                        print("CurrentMin\(currentMin) : SavedMin\(savedMin)")
+                        let minGap = currentDate.sainiMinFrom(savedDate)
                         //Checking 15 min Gap
-                        if currentMin - savedMin >= 2{
+                        log.success("Gap##### : \(minGap)")/
+                        if minGap >= 1{
                             //Calcuate Distance Range and Call Checkin Service
                             let currentCoordinate = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                             let savedCoordinate = CLLocation(latitude: SavedLocation.latitude, longitude: SavedLocation.longitude)
                             let distanceInMeters = currentCoordinate.distance(from: savedCoordinate)
-                            log.success("\(distanceInMeters)")/
+                            log.success("Distance = \(distanceInMeters)")/
                             //Check for 100m radius
                             if distanceInMeters <= 100{
+                                //Call API Service
                                 log.success("\(distanceInMeters)")/
                             }
                             else{
@@ -98,3 +97,10 @@ extension ViewController: CLLocationManagerDelegate{
 
 
 
+extension Date{
+    
+    //MARK:- sainiHoursFrom
+    public func sainiMinFrom(_ date: Date) -> Double {
+        return Double(Calendar.current.dateComponents([.minute], from: date, to: self).minute!)
+    }
+}
