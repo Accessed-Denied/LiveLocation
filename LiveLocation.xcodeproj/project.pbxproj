@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22CD1A6A24DBDD4100146F62 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD1A6924DBDD4100146F62 /* LocationModel.swift */; };
 		22CF914F24D97DDD00AF7ED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF914E24D97DDD00AF7ED5 /* AppDelegate.swift */; };
 		22CF915124D97DDD00AF7ED5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF915024D97DDD00AF7ED5 /* SceneDelegate.swift */; };
 		22CF915324D97DDD00AF7ED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF915224D97DDD00AF7ED5 /* ViewController.swift */; };
@@ -17,9 +18,14 @@
 		22CF916624D97E6400AF7ED5 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF916524D97E6400AF7ED5 /* GlobalConstant.swift */; };
 		22CF916B24D97FD400AF7ED5 /* MessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF916924D97FD400AF7ED5 /* MessageRequest.swift */; };
 		22CF916C24D97FD400AF7ED5 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF916A24D97FD400AF7ED5 /* MessageResponse.swift */; };
+		92DEFD2F7705B5DD894CB0B1 /* Pods_LiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092FD8EE198586447E15EA00 /* Pods_LiveLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		092FD8EE198586447E15EA00 /* Pods_LiveLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		124EF4B9FFBE0C34928548BF /* Pods-LiveLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveLocation.debug.xcconfig"; path = "Target Support Files/Pods-LiveLocation/Pods-LiveLocation.debug.xcconfig"; sourceTree = "<group>"; };
+		18B2AEB3BF7B2E5EC28C2CAA /* Pods-LiveLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveLocation.release.xcconfig"; path = "Target Support Files/Pods-LiveLocation/Pods-LiveLocation.release.xcconfig"; sourceTree = "<group>"; };
+		22CD1A6924DBDD4100146F62 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		22CF914B24D97DDD00AF7ED5 /* LiveLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CF914E24D97DDD00AF7ED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22CF915024D97DDD00AF7ED5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DEFD2F7705B5DD894CB0B1 /* Pods_LiveLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +57,8 @@
 			children = (
 				22CF914D24D97DDD00AF7ED5 /* LiveLocation */,
 				22CF914C24D97DDD00AF7ED5 /* Products */,
+				75BA769C66AB96282BFC2B76 /* Pods */,
+				7F95BC5916316A6BE7A93AA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				22CF916824D97FD400AF7ED5 /* MessageModel */,
+				22CD1A6924DBDD4100146F62 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,6 +113,24 @@
 			path = MessageModel;
 			sourceTree = "<group>";
 		};
+		75BA769C66AB96282BFC2B76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				124EF4B9FFBE0C34928548BF /* Pods-LiveLocation.debug.xcconfig */,
+				18B2AEB3BF7B2E5EC28C2CAA /* Pods-LiveLocation.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7F95BC5916316A6BE7A93AA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				092FD8EE198586447E15EA00 /* Pods_LiveLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22CF915F24D97DE200AF7ED5 /* Build configuration list for PBXNativeTarget "LiveLocation" */;
 			buildPhases = (
+				7B62E4B6427267B45BD9F932 /* [CP] Check Pods Manifest.lock */,
 				22CF914724D97DDD00AF7ED5 /* Sources */,
 				22CF914824D97DDD00AF7ED5 /* Frameworks */,
 				22CF914924D97DDD00AF7ED5 /* Resources */,
+				BEDC606A507359D37F79157C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,11 +199,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B62E4B6427267B45BD9F932 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiveLocation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEDC606A507359D37F79157C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiveLocation/Pods-LiveLocation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiveLocation/Pods-LiveLocation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiveLocation/Pods-LiveLocation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22CF914724D97DDD00AF7ED5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CD1A6A24DBDD4100146F62 /* LocationModel.swift in Sources */,
 				22CF916424D97E1C00AF7ED5 /* HttpUtility.swift in Sources */,
 				22CF916624D97E6400AF7ED5 /* GlobalConstant.swift in Sources */,
 				22CF915324D97DDD00AF7ED5 /* ViewController.swift in Sources */,
@@ -322,6 +395,7 @@
 		};
 		22CF916024D97DE200AF7ED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 124EF4B9FFBE0C34928548BF /* Pods-LiveLocation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -340,6 +414,7 @@
 		};
 		22CF916124D97DE200AF7ED5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18B2AEB3BF7B2E5EC28C2CAA /* Pods-LiveLocation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
