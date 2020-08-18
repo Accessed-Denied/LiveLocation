@@ -16,7 +16,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserLocation()
+        getFormattedTime()
         // Do any additional setup after loading the view.
+    }
+    
+    func getFormattedTime(){
+        
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let startOfDate = calendar.startOfDay(for: Date())
+        print(startOfDate.sainiAddMinutes(1200))
+        print(startOfDate.sainiAddMinutes(1200).toString(dateFormat: "yyyy-MM-dd HH:mm:ss a"))
+        var secondsFromGMT: Int { return TimeZone.current.secondsFromGMT() }
+        print(secondsFromGMT/60)  // -7200
     }
     
     func getUserLocation() {
@@ -103,4 +115,14 @@ extension Date{
     public func sainiMinFrom(_ date: Date) -> Double {
         return Double(Calendar.current.dateComponents([.minute], from: date, to: self).minute!)
     }
+    
+    func toString( dateFormat format  : String ) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") 
+        return dateFormatter.string(from: self)
+    }
+    
+    
 }
